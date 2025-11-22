@@ -13,7 +13,14 @@ int main(void) {
 	/* Start at 1 and print numbers up to and including 20.
 	*/
 	for(int lcv = 1; lcv <= 20; lcv++) {
-		cout << lcv << endl;
+		if(lcv % 3 == 0 && lcv % 5 == 0)
+			cout << lcv << ": FIZZBUZZ" << endl;
+		else if(lcv % 3 == 0)
+			cout << lcv << ": FIZZ" << endl;
+		else if(lcv % 5 == 0)
+			cout << lcv << ": BUZZ" << endl;
+		else
+			cout << lcv << endl;
 	} // end of for loop
 
 	return 0;
