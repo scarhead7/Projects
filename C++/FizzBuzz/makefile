@@ -4,11 +4,11 @@
 
 MAKEFLAGS += --silent
 
-run: a
-	./a
-
 a: fizzbuzz.cpp
 	g++ fizzbuzz.cpp -o a
+
+run: a
+	./a
 
 clean:
 	rm ./a
