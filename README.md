@@ -8,12 +8,12 @@
 -->
 
 ## Python
-| Project  | Status    | Date     |
-| -------- | --------- | -------- |
+| Project  | Status    |
+| -------- | --------- |
 | | | |
 
 ## C++
-| Project  | Status    | Date     |
-| -------- | --------- | -------- |
-| FizzBuzz | COMPLETED | NOV 2025 |
+| Project  | Status    |
+| -------- | --------- |
+| FizzBuzz | COMPLETED |
 
