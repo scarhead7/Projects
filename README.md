@@ -13,7 +13,8 @@
 | | | |
 
 ## C++
-| Project  | Status    |
-| -------- | --------- |
-| FizzBuzz | COMPLETED |
+| Project    | Status    |
+| ---------- | --------- |
+| FizzBuzz   | COMPLETED |
+| E-Commerce | ACTIVE    |
 
