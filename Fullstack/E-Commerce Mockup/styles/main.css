@@ -1,0 +1,106 @@
+/* 1E1DB14C
+** CREATED 261348 NOV 2025 UPDATED 26 NOV 2025
+** main styles
+*/
+
+
+/* COLORS USED: (hopefully an exhaustive list)
+** - #34344A - Space Indigo
+** - #F5F0F6 - Lavender Mist
+** - #FF5E5B - Vibrant Coral
+*/
+
+body {
+    height: 100%;
+    padding-bottom: 3em;
+}
+
+/* Add a background color to the top navigation. */
+.topnav {
+  background-color: #34344A; /*indigo*/
+  overflow: hidden;
+  line-height: 2em;
+}
+
+/* Style the links inside the navigation bar. */
+.topnav a.navlink {
+  float: left;
+  color: #F5F0F6; /*mist*/
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover. */
+.topnav a.navlink:hover {
+  background-color: #F5F0F6; /*mist*/
+  color: #34344A; /*indigo*/
+}
+
+/* Add a color to the active/current link */
+.topnav a.navlink.active {
+  background-color: #00022e; /*dark navy blue*/
+  color: white;
+}
+
+/*.error-message {
+    color: red;
+}
+
+.success-message {
+    color: green;
+}*/
+
+.center-container {
+    display: flex;
+    justify-content: center;
+}
+
+.portal_update_button {
+    color: #00022e; /*dark navy blue*/
+    font-size: 0.55em;
+}
+
+/* signin button styling */
+div#userinout {
+    float: right;
+    padding: 0.75em 16px;
+}
+
+/* Change the color of "button" text. */
+a#signin_button, a#signout_button, a#portal_button {
+    text-decoration: none;
+    font-size: 17px;
+    background-color: #00022e; /*dark navy blue*/
+    color: #F5F0F6; /*magnolia*/
+    border-radius: 10px;
+    padding: 8px;
+    border: none;
+}
+
+/* footer styling */
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #34344A; /*indigo*/
+  color: #F5F0F6; /*mist*/
+  line-height: 3em;
+}
+
+footer div {
+  text-align: center;
+}
+
+footer span#page-update {
+	float: right;
+}
+
+/* debugging notification styling */
+footer span#debug-notif {
+	float: left;
+	color: #FF5E5B; /*coral*/
+}
+
