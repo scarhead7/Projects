@@ -1,5 +1,5 @@
 <!-- 1E1DB14C
-     CREATED 261245 NOV 2025 UPDATED 26 NOV 2025
+     CREATED 261245 NOV 2025 UPDATED 29 NOV 2025
      Header elements file.
 -->
 
@@ -11,7 +11,9 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<meta name="author" content="1E1DB14C">
 		<meta name="robots" content="index, nofollow">
-		<title>Store Title</title>
+		<title>
+		<?php echo (isset($title)) ? $title : "Store"; ?>
+		</title>
 		<link rel="stylesheet" href="/Store/styles/main.css" type="text/css">
 	</head>
 	<body>

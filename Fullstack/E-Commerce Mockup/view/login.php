@@ -1,9 +1,11 @@
 <?php
 /* 1E1DB14C
-** CREATED 261440 NOV 2025 UPDATED 26 NOV 2025
+** CREATED 261440 NOV 2025 UPDATED 29 NOV 2025
 ** Fullstack project: login page.
 */
 
+
+$title = "Login";
 
 include $_SERVER['DOCUMENT_ROOT'] . '/Store/elements/header.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/Store/elements/nav.php';
