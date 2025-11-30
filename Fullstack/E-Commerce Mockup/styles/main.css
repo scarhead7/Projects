@@ -1,5 +1,5 @@
 /* 1E1DB14C
-** CREATED 261348 NOV 2025 UPDATED 26 NOV 2025
+** CREATED 261348 NOV 2025 UPDATED 29 NOV 2025
 ** main styles
 */
 
@@ -12,7 +12,6 @@
 
 body {
     height: 100%;
-    padding-bottom: 3em;
 }
 
 /* Add a background color to the top navigation. */
@@ -78,6 +77,19 @@ a#signin_button, a#signout_button, a#portal_button {
     padding: 8px;
     border: none;
 }
+
+.account-links-container {
+	width: 200px;
+	height: 75px;
+	border: 2px solid grey;
+	border-radius: 5px;
+	text-align: center;
+}
+/*
+.account-home-links {
+	border: 2px solid grey;
+	border-radius: 5px;
+}*/
 
 /* footer styling */
 footer {

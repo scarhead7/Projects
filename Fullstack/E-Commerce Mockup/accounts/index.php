@@ -1,6 +1,6 @@
 <?php
 /* 1E1DB14C
-** CREATED 251302 NOV 2025 UPDATED 25 NOV 2025
+** CREATED 251302 NOV 2025 UPDATED 29 NOV 2025
 ** Accounts controller
 */
 
@@ -41,7 +41,7 @@ switch($action) {
 			header("Location: /Store/");
 		break; // end of Logout case statement
 	default:
-		include $_SERVER['DOCUMENT_ROOT'] . '/Store/view/home.php';
+		include $_SERVER['DOCUMENT_ROOT'] . '/Store/view/portal.php';
 } // end of switch
 
 ?>
