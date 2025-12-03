@@ -6,6 +6,8 @@
 
 #include <iostream>
 
+#include "card/card.h"
+
 using std::cout;
 using std::endl;
 

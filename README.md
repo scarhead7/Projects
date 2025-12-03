@@ -19,6 +19,6 @@
 | [Poker](C++/Poker/)      | ACTIVE    |
 
 ## Fullstack
-| Project    | Status    |
-| ---------- | --------- |
+| Project                                     | Status    |
+| ------------------------------------------- | --------- |
 | [E-Commerce](<Fullstack/E-Commerce Mockup>) | ACTIVE    |
