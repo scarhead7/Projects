@@ -21,4 +21,4 @@
 ## Fullstack
 | Project    | Status    |
 | ---------- | --------- |
-| [E-Commerce](Fullstack/E-Commerce Mockup) | ACTIVE    |
+| [E-Commerce](<Fullstack/E-Commerce Mockup>) | ACTIVE    |
