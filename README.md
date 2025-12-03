@@ -16,5 +16,9 @@
 | Project    | Status    |
 | ---------- | --------- |
 | FizzBuzz   | COMPLETED |
-| E-Commerce | ACTIVE    |
+| [Poker](C++/Poker/) | ACTIVE    |
 
+## Fullstack
+| Project    | Status    |
+| ---------- | --------- |
+| E-Commerce | ACTIVE    |
