@@ -12,7 +12,9 @@ using std::cout;
 using std::endl;
 
 int main(void) {
+	Card c1;
 
+	cout << c1.getCardDesignation() << endl;
 	
 	return 0;
 } // end of main()

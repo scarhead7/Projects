@@ -4,7 +4,7 @@
 
 MAKEFLAGS += --silent
 
-a: poker.cpp
+a: poker.cpp card/card.h
 	g++ poker.cpp -o a
 
 run: a
