@@ -9,9 +9,8 @@
 
 class Card {
 	private:
-		/* Card value (i.e. 0-12 with 0 being Ace, the numerals between
-		** 2 and 10 following from 1 to 9, and 10-12 being Jack through
-		** King)
+		/* Card value (i.e. 0-12 with the numerals between 2 and 10 following
+		** from 0 to 8, 9-11 being Jack through King, and 12 being Ace)
 		*/
 		int value;
 		/* Card suit (i.e. 0-3 with each suit being assigned as follows:
