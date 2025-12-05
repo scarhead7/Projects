@@ -1,5 +1,5 @@
 /* CREATED BY: 1E1DB14C
-** CREATED 030946 DEC 2025 UPDATED 03 DEC 2025
+** CREATED 030946 DEC 2025 UPDATED 05 DEC 2025
 ** CLI Poker: Card class header
 */
 
@@ -24,48 +24,72 @@ class Card {
 		** be between 0 and 63, inclusive.
 		*/
 		int encoding;
+
 		/* sets card value
 		** will potentially go away
 		*/
 		void setCardValue(int v) {
-			if(v <= 12 && v >= 0)
+			if(v <= 12 && v >= 0) {
 				this->value = v;
-			else
-				this->value = -1;
+			} else {
+				throw InvalidCardDesignationException("Invalid Card Value");
+			} // end of conditional
 		} // end of setCardValue()
+
 		/* returns card value only
 		*/
 		int getCardValue(void) {
 			return this->value;
 		} // end of getCardValue()
+
+		/* sets card suit
+		** will potentially go away
+		*/
 		void setCardSuit(int s) {
-			if(s <= 3 && s >= 0)
+			if(s <= 3 && s >= 0) {
 				this->suit = s;
-			else
-				this->suit = -1;
+			} else {
+				throw InvalidCardDesignationException("Invalid Card Suit");
+			} // end of conditional
 		} // end of setCardSuit()
+
 		/* returns card suit only
 		*/
 		int getCardSuit(void) {
 			return this->suit;
 		} // end of getCardSuit()
+
 		/* encodes card value and suit
 		*/
 		void setCardEncoding(void) {
-			//STUBBED
+			this->encoding = ((this->getCardSuit() * 17) + 
+				this->getCardValue());
 		} // end of setCardEncoding()
-		/* returns card suit from encoded value
+
+		/* sets card value and suit to encoded value passed in
 		*/
-		int getCardEncodedSuit() {
-			//STUBBED
-			return -1;//DEBUGGING
-		} // end of getCardEncodedSuit()
-		/* returns card value from encoded value
+		void setDesignationFromEncoding(int e) {
+			if((e / 17) >= 0 && (e / 17) <= 3) {
+				this->suit = (e / 17);
+			} else {
+				throw InvalidCardDesignationException("Invalid Suit Encoding");
+			} // end of conditional
+
+			if((e % 17) >= 0 && (e % 17) <= 12) {
+				this->value = (e % 17);
+			} else {
+				throw InvalidCardDesignationException("Invalid Value Encoding");
+			} // end of conditional
+		} // end of setDesignationFromEncoding()
+
+		/* recognizes card based off of either stored values of card value/suit
+		** or from card encoding (I haven't decided yet) then returns string
+		** with textual representation of card designation (i.e. Ace of Spades)
 		*/
-		int getCardEncodedValue() {
+		std::string recognizeCard(void) {
 			//STUBBED
-			return -1;//DEBUGGING
-		} // end of getCardEncodedValue()
+			return "-1";//STUBBED
+		} // end of recognizeCard()
 	public:
 		/* returns card encoded designaion value
 		** DOES NOT decode it!
@@ -73,13 +97,21 @@ class Card {
 		int getCardEncoding(void) {
 			return this->encoding;
 		} // end of getCardEncoding()
+
 		/* returns card decoded designation value as string
 		*/
 		std::string getCardDesignation(void) {
 			//STUBBED
-			// use getCardEncodedSuit() and getCardEncodedValue()
 			return "fubar";//DEBUGGING
 		} // end of getCardDesignation()
+
+		/* !DEBUGGING FUNCTION ONLY!
+		*/
+		void setCardDesignation(int s, int v) {
+			this->suit = s;
+			this->value = v;
+			this->setCardEncoding();
+		} // end of setCardDesignation()
 }; // end of Card class
 
 #endif
