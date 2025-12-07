@@ -1,5 +1,5 @@
 /* CREATED BY: 1E1DB14C
-** CREATED 030905 DEC 2025 UPDATED 05 DEC 2025
+** CREATED 030905 DEC 2025 UPDATED 07 DEC 2025
 ** CLI Poker
 */
 
@@ -17,8 +17,9 @@ int main(void) {
 
 	try {
 		//DEBUGGING
-		c1.setCardDesignation(0,12);//set card to Ace of Spades
+		c1.setCardDesignation(0,4);//set card to Six of Spades
 		cout << c1.getCardEncoding() << endl;//retrieve card encoding; DEBUGGING
+		cout << c1.getCardDesignation() << endl;//DEBUGGING
 	} catch(InvalidCardDesignationException e) {
 		cout << e.what() << endl;
 	} // end of try-catch

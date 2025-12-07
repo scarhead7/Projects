@@ -1,5 +1,5 @@
 /* CREATED BY: 1E1DB14C
-** CREATED 030946 DEC 2025 UPDATED 05 DEC 2025
+** CREATED 030946 DEC 2025 UPDATED 07 DEC 2025
 ** CLI Poker: Card class header
 */
 
@@ -86,8 +86,14 @@ class Card {
 		** or from card encoding (I haven't decided yet) then returns string
 		** with textual representation of card designation (i.e. Ace of Spades)
 		*/
-		std::string recognizeCard(void) {
-			//STUBBED
+		std::string recognizeCard(void) { /* ! INCOMPLETE ! */
+			int corrected_value = this->value + 2;
+
+			if(this->suit == 0) {
+				if(this->value <= 8) {
+					return std::to_string(corrected_value) + " of Spades";
+				} // end of inner conditional
+			} // end of outer conditional
 			return "-1";//STUBBED
 		} // end of recognizeCard()
 	public:
@@ -102,7 +108,8 @@ class Card {
 		*/
 		std::string getCardDesignation(void) {
 			//STUBBED
-			return "fubar";//DEBUGGING
+			//return "fubar";//DEBUGGING
+			return this->recognizeCard();//DEBUGGING
 		} // end of getCardDesignation()
 
 		/* !DEBUGGING FUNCTION ONLY!
