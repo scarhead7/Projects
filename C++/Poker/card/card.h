@@ -82,16 +82,22 @@ class Card {
 			} // end of conditional
 		} // end of setDesignationFromEncoding()
 
-		/* recognizes card based off of either stored values of card value/suit
-		** or from card encoding (I haven't decided yet) then returns string
-		** with textual representation of card designation (i.e. Ace of Spades)
+		/* recognizes card based off of stored values of card value/suit and
+		** returns string with textual representation of card designation
+		** (i.e. Ace of Spades)
 		*/
 		std::string recognizeCard(void) { /* ! INCOMPLETE ! */
 			int corrected_value = this->value + 2;
 
 			if(this->suit == 0) {
-				if(this->value <= 8) {
+				if(this->value <= 8) {//SPADES
 					return std::to_string(corrected_value) + " of Spades";
+				} else if(this->suit == 1) {//HEARTS
+					return std::to_string(corrected_value) + " of Hearts";
+				} else if(this->suit == 2) {//CLUBS
+					return std::to_string(corrected_value) + " of Clubs";
+				}else if(this->suit == 3) {//DIAMONDS
+					return std::to_string(corrected_value) + " of Hearts";
 				} // end of inner conditional
 			} // end of outer conditional
 			return "-1";//STUBBED
