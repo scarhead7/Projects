@@ -1,5 +1,5 @@
 /* CREATED BY: 1E1DB14C
-** CREATED 030946 DEC 2025 UPDATED 07 DEC 2025
+** CREATED 030946 DEC 2025 UPDATED 08 DEC 2025
 ** CLI Poker: Card class header
 */
 
@@ -89,18 +89,25 @@ class Card {
 		std::string recognizeCard(void) { /* ! INCOMPLETE ! */
 			int corrected_value = this->value + 2;
 
-			if(this->suit == 0) {
-				if(this->value <= 8) {//SPADES
+			if(this->suit == 0) {//SPADES
+				if(this->value <= 8) {//non-face card
 					return std::to_string(corrected_value) + " of Spades";
-				} else if(this->suit == 1) {//HEARTS
-					return std::to_string(corrected_value) + " of Hearts";
-				} else if(this->suit == 2) {//CLUBS
-					return std::to_string(corrected_value) + " of Clubs";
-				}else if(this->suit == 3) {//DIAMONDS
+				} // end of inner conditional
+			} else if(this->suit == 1) {//HEARTS
+				if(this->value <= 8) {//non-face card
 					return std::to_string(corrected_value) + " of Hearts";
 				} // end of inner conditional
+			} else if(this->suit == 2) {//CLUBS
+				if(this->value <= 8) {//non-face card
+					return std::to_string(corrected_value) + " of Clubs";
+				} // end of inner conditional
+			} else if(this->suit == 3) {//DIAMONDS
+				if(this->value <= 8) {//non-face card
+					return std::to_string(corrected_value) + " of Diamonds";
+				} // end of inner conditional
 			} // end of outer conditional
-			return "-1";//STUBBED
+
+			throw InvalidCardDesignationException("UNKNOWN CARD");
 		} // end of recognizeCard()
 	public:
 		/* returns card encoded designaion value
@@ -116,6 +123,7 @@ class Card {
 			//STUBBED
 			//return "fubar";//DEBUGGING
 			return this->recognizeCard();//DEBUGGING
+			//return std::to_string(this->suit) + " " + std::to_string(this->value);//DEBUGGING
 		} // end of getCardDesignation()
 
 		/* !DEBUGGING FUNCTION ONLY!
@@ -125,6 +133,18 @@ class Card {
 			this->value = v;
 			this->setCardEncoding();
 		} // end of setCardDesignation()
+
+		/* !DEBUGGING FUNCTION ONLY!
+		*/
+		void setCardDesignationEncoding(int e) {
+			if(e >= 0 && e <= 63 ) {
+				this->encoding = e;
+				this->setDesignationFromEncoding(e);
+			} else {
+				throw InvalidCardDesignationException(\
+					"Encoding falls outside valid range.");
+			} // end of conditional
+		} // end of setCardDesignationEncoding()
 }; // end of Card class
 
 #endif

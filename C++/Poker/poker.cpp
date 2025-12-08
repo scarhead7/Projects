@@ -1,5 +1,5 @@
 /* CREATED BY: 1E1DB14C
-** CREATED 030905 DEC 2025 UPDATED 07 DEC 2025
+** CREATED 030905 DEC 2025 UPDATED 08 DEC 2025
 ** CLI Poker
 */
 
@@ -17,9 +17,12 @@ int main(void) {
 
 	try {
 		//DEBUGGING
-		c1.setCardDesignation(0,4);//set card to Six of Spades
+		c1.setCardDesignationEncoding(9);//set card to Jack of Spades
+		cout << "Encoding: ";//DEBUGGING
 		cout << c1.getCardEncoding() << endl;//retrieve card encoding; DEBUGGING
-		cout << c1.getCardDesignation() << endl;//DEBUGGING
+		cout << "Text: ";//DEBUGGING
+		cout << c1.getCardDesignation() << endl;//retrieve card textual representation; DEBUGGING
+		cout << "this will never show";//DEBUGGING
 	} catch(InvalidCardDesignationException e) {
 		cout << e.what() << endl;
 	} // end of try-catch
