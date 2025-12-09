@@ -86,31 +86,63 @@ class Card {
 		** returns string with textual representation of card designation
 		** (i.e. Ace of Spades)
 		*/
-		std::string recognizeCard(void) { /* ! INCOMPLETE ! */
+		std::string recognizeCard(void) {
 			int corrected_value = this->value + 2;
 
 			if(this->suit == 0) {//SPADES
 				if(this->value <= 8) {//non-face card
 					return std::to_string(corrected_value) + " of Spades";
+				} else if(this->value == 9) {//JACK
+					return "Jack of Spades";
+				} else if(this->value == 10) {//QUEEN
+					return "Queen of Spades";
+				} else if(this->value == 11) {//KING
+					return "King of Spades";
+				} else if(this->value == 12) {//ACE
+					return "Ace of Spades";
 				} // end of inner conditional
 			} else if(this->suit == 1) {//HEARTS
 				if(this->value <= 8) {//non-face card
 					return std::to_string(corrected_value) + " of Hearts";
+				} else if(this->value == 9) {//JACK
+					return "Jack of Hearts";
+				} else if(this->value == 10) {//QUEEN
+					return "Queen of Hearts";
+				} else if(this->value == 11) {//KING
+					return "King of Hearts";
+				} else if(this->value == 12) {//ACE
+					return "Ace of Hearts";
 				} // end of inner conditional
 			} else if(this->suit == 2) {//CLUBS
 				if(this->value <= 8) {//non-face card
 					return std::to_string(corrected_value) + " of Clubs";
+				} else if(this->value == 9) {//JACK
+					return "Jack of Clubs";
+				} else if(this->value == 10) {//QUEEN
+					return "Queen of Clubs";
+				} else if(this->value == 11) {//KING
+					return "King of Clubs";
+				} else if(this->value == 12) {//ACE
+					return "Ace of Clubs";
 				} // end of inner conditional
 			} else if(this->suit == 3) {//DIAMONDS
 				if(this->value <= 8) {//non-face card
 					return std::to_string(corrected_value) + " of Diamonds";
+				} else if(this->value == 9) {//JACK
+					return "Jack of Diamonds";
+				} else if(this->value == 10) {//QUEEN
+					return "Queen of Diamonds";
+				} else if(this->value == 11) {//KING
+					return "King of Diamonds";
+				} else if(this->value == 12) {//ACE
+					return "Ace of Diamonds";
 				} // end of inner conditional
 			} // end of outer conditional
 
 			throw InvalidCardDesignationException("UNKNOWN CARD");
 		} // end of recognizeCard()
 	public:
-		/* returns card encoded designaion value
+		/* returns card encoded designation value
 		** DOES NOT decode it!
 		*/
 		int getCardEncoding(void) {
@@ -120,13 +152,11 @@ class Card {
 		/* returns card decoded designation value as string
 		*/
 		std::string getCardDesignation(void) {
-			//STUBBED
-			//return "fubar";//DEBUGGING
-			return this->recognizeCard();//DEBUGGING
-			//return std::to_string(this->suit) + " " + std::to_string(this->value);//DEBUGGING
+			return this->recognizeCard();
 		} // end of getCardDesignation()
 
 		/* !DEBUGGING FUNCTION ONLY!
+		** Accepts card suit and value and sets appropriately.
 		*/
 		void setCardDesignation(int s, int v) {
 			this->suit = s;
@@ -135,6 +165,7 @@ class Card {
 		} // end of setCardDesignation()
 
 		/* !DEBUGGING FUNCTION ONLY!
+		** Accepts encoding and sets card value appropriately.
 		*/
 		void setCardDesignationEncoding(int e) {
 			if(e >= 0 && e <= 63 ) {
