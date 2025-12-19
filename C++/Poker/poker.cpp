@@ -1,5 +1,5 @@
 /* CREATED BY: 1E1DB14C
-** CREATED 030905 DEC 2025 UPDATED 08 DEC 2025
+** CREATED 030905 DEC 2025 UPDATED 19 DEC 2025
 ** CLI Poker
 */
 
@@ -9,6 +9,7 @@
 
 #include "card/InvalidCardDesignationException.cpp"
 #include "card/card.h"
+#include "hand/hand.h"
 
 using std::cout;
 using std::endl;
@@ -20,6 +21,7 @@ int main(void) {
 	Card c1;//DEBUGGING
 	Card hand[2]; // player hand
 	Card community[3]; // community ("table") cards
+	Hand phand; // player hand; DEBUGGING
 
 	try {
 		hand[0].setCardDesignation(generateRandomNumber(0, 3),
