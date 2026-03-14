@@ -8,5 +8,6 @@ Allows for a simple poker game to be played from a CLI.
 - [ ] create card recognition logic
 - [ ] create hand recognition logic
 - [x] create exception class for invalid card designation
+- [ ] enforce unique generation of cards
 <!-- - [ ] 
 -->

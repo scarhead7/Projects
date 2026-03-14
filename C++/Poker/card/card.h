@@ -1,11 +1,13 @@
 /* CREATED BY: 1E1DB14C
-** CREATED 030946 DEC 2025 UPDATED 08 DEC 2025
+** CREATED 030946 DEC 2025 UPDATED 14 MAR 2026
 ** CLI Poker: Card class header
 */
 
 
 #ifndef Card_H
 #define Card_H
+
+#include <random>
 
 class Card {
 	private:
@@ -141,6 +143,16 @@ class Card {
 
 			throw InvalidCardDesignationException("UNKNOWN CARD");
 		} // end of recognizeCard()
+
+		/* generates a random number for card generation
+		*/
+		int generateRandomNumber(int min, int max) {
+			std::random_device rd;
+		    std::mt19937 gen(rd());
+		    std::uniform_int_distribution<> d(min, max);
+
+		    return d(gen);
+		} // end of generateRandomNumber()
 	public:
 		/* returns card encoded designation value
 		** DOES NOT decode it!
@@ -154,6 +166,14 @@ class Card {
 		std::string getCardDesignation(void) {
 			return this->recognizeCard();
 		} // end of getCardDesignation()
+
+		/* generates a random card
+		*/
+		void setRandomCard(void) {
+			this->suit  = generateRandomNumber(0,3); // set suit
+			this->value = generateRandomNumber(0,12); // set value
+			this->setCardEncoding();
+		} // end of setRandomCard()
 
 		/* !DEBUGGING FUNCTION ONLY!
 		** Accepts card suit and value and sets appropriately.
