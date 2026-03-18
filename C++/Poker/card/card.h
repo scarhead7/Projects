@@ -1,5 +1,5 @@
 /* CREATED BY: 1E1DB14C
-** CREATED 030946 DEC 2025 UPDATED 14 MAR 2026
+** CREATED 030946 DEC 2025 UPDATED 18 MAR 2026
 ** CLI Poker: Card class header
 */
 
@@ -7,10 +7,15 @@
 #ifndef Card_H
 #define Card_H
 
-#include <random>
-
 class Card {
 	private:
+		/* Flag variable that determines if the object has been initialized
+		** with values or only created.
+		**
+		** FALSE	no values set (i.e. not actual card)
+		** TRUE		values set (i.e. card value is determined)
+		*/
+		bool init;
 		/* Card value (i.e. 0-12 with the numerals between 2 and 10 following
 		** from 0 to 8, 9-11 being Jack through King, and 12 being Ace)
 		*/
@@ -26,47 +31,6 @@ class Card {
 		** be between 0 and 63, inclusive.
 		*/
 		int encoding;
-
-		/* sets card value
-		** will potentially go away
-		*/
-		void setCardValue(int v) {
-			if(v <= 12 && v >= 0) {
-				this->value = v;
-			} else {
-				throw InvalidCardDesignationException("Invalid Card Value");
-			} // end of conditional
-		} // end of setCardValue()
-
-		/* returns card value only
-		*/
-		int getCardValue(void) {
-			return this->value;
-		} // end of getCardValue()
-
-		/* sets card suit
-		** will potentially go away
-		*/
-		void setCardSuit(int s) {
-			if(s <= 3 && s >= 0) {
-				this->suit = s;
-			} else {
-				throw InvalidCardDesignationException("Invalid Card Suit");
-			} // end of conditional
-		} // end of setCardSuit()
-
-		/* returns card suit only
-		*/
-		int getCardSuit(void) {
-			return this->suit;
-		} // end of getCardSuit()
-
-		/* encodes card value and suit
-		*/
-		void setCardEncoding(void) {
-			this->encoding = ((this->getCardSuit() * 17) + 
-				this->getCardValue());
-		} // end of setCardEncoding()
 
 		/* sets card value and suit to encoded value passed in
 		*/
@@ -143,17 +107,65 @@ class Card {
 
 			throw InvalidCardDesignationException("UNKNOWN CARD");
 		} // end of recognizeCard()
-
-		/* generates a random number for card generation
-		*/
-		int generateRandomNumber(int min, int max) {
-			std::random_device rd;
-		    std::mt19937 gen(rd());
-		    std::uniform_int_distribution<> d(min, max);
-
-		    return d(gen);
-		} // end of generateRandomNumber()
 	public:
+		/* constructor
+		*/
+		Card(void) {
+			this->init = false;
+		} // end of constructor
+
+		/* returns the init value
+		*/
+		bool getInit(void) {
+			return this->init;
+		} // end of getInit()
+
+		/* sets card value
+		** will potentially go away
+		*/
+		void setCardValue(int v) {
+			if(v <= 12 && v >= 0) {
+				this->value = v;
+			} else {
+				throw InvalidCardDesignationException("Invalid Card Value");
+			} // end of conditional
+		} // end of setCardValue()
+
+		/* returns card value only
+		*/
+		int getCardValue(void) {
+			return this->value;
+		} // end of getCardValue()
+
+		/* sets card suit
+		** will potentially go away
+		*/
+		void setCardSuit(int s) {
+			if(s <= 3 && s >= 0) {
+				this->suit = s;
+			} else {
+				throw InvalidCardDesignationException("Invalid Card Suit");
+			} // end of conditional
+		} // end of setCardSuit()
+
+		/* returns card suit only
+		*/
+		int getCardSuit(void) {
+			return this->suit;
+		} // end of getCardSuit()
+
+		/* encodes card value and suit
+		** returns the encoded value as a result
+		**
+		** Potentially add error checking here?
+		*/
+		int setCardEncoding(void) {
+			this->encoding = ((this->getCardSuit() * 17) + 
+				this->getCardValue()); // set encoding
+			this->init = true; // indicate card has been set
+			return this->encoding;
+		} // end of setCardEncoding()
+
 		/* returns card encoded designation value
 		** DOES NOT decode it!
 		*/
@@ -166,14 +178,6 @@ class Card {
 		std::string getCardDesignation(void) {
 			return this->recognizeCard();
 		} // end of getCardDesignation()
-
-		/* generates a random card
-		*/
-		void setRandomCard(void) {
-			this->suit  = generateRandomNumber(0,3); // set suit
-			this->value = generateRandomNumber(0,12); // set value
-			this->setCardEncoding();
-		} // end of setRandomCard()
 
 		/* !DEBUGGING FUNCTION ONLY!
 		** Accepts card suit and value and sets appropriately.

@@ -1,5 +1,5 @@
 /* CREATED BY: 1E1DB14C
-** CREATED 191326 DEC 2025 UPDATED 14 MAR 2026
+** CREATED 191326 DEC 2025 UPDATED 18 MAR 2026
 ** CLI Poker: Hand class header
 */
 
@@ -13,15 +13,29 @@ class Hand {
 		*/
 		Card hand[2];
 	public:
-		/* Generates two cards for the player's hand.
-		** Returns 1 for success.
+		/* constructor
 		*/
-		int dealPlayerHand(void) {
-			hand[0].setRandomCard();
-			hand[1].setRandomCard();
+		Hand(void) {
+			this->hand[0] = Card();
+			this->hand[1] = Card();
+		} // end of constructor
 
-			return 1;
-		} // end of dealPlayerHand()
+		/* Sets a card in the hand that is "dealt" from the Deck class. The
+		** card that is set in the hand is determined by whichever card is
+		** not currently set.
+		** Returns the set card encoding.
+		**
+		** NEEDS ERROR HANDLING
+		*/
+		int setHandCard(Card c) {
+			if(!hand[0].getInit()) {
+				hand[0] = c;
+			} else {
+				hand[1] = c;
+			} // end of conditional
+
+			return c.getCardEncoding();
+		} // end of setHandCard()
 
 		std::string getPlayerHand(void) {
 			return hand[0].getCardDesignation() + "\n" + hand[1].getCardDesignation();

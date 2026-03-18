@@ -1,5 +1,6 @@
-# CREATED 221209 NOV 2025 UPDATED 22 NOV 2025
+# CREATED 221209 NOV 2025 UPDATED 18 MAR 2026
 # This gitignore file created for my Projects repo.
 
 .DS_Store
 explain.txt
+C++/Poker/deck/decktest.cpp
