@@ -15,7 +15,7 @@ using std::cout;
 using std::endl;
 
 int main(void) {
-	Card c1;//DEBUGGING
+	//Card c1 = Card();//DEBUGGING
 	Deck d1;
 	Hand phand; // player hand
 
@@ -24,7 +24,6 @@ int main(void) {
 		phand.setHandCard(d1.generateRandomCard()); // set first hand card
 		phand.setHandCard(d1.generateRandomCard()); // set second hand card
 
-		c1.setCardDesignationEncoding(9);//set card to Jack of Spades; DEBUGGING
 		// display player's hand
 		cout << endl << "Player's hand:\n" << phand.getPlayerHand() << endl; //TEMP
 	} catch(InvalidCardDesignationException e) {

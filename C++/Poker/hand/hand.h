@@ -16,6 +16,7 @@ class Hand {
 		/* constructor
 		*/
 		Hand(void) {
+			// set hand cards to blank cards
 			this->hand[0] = Card();
 			this->hand[1] = Card();
 		} // end of constructor
@@ -24,14 +25,15 @@ class Hand {
 		** card that is set in the hand is determined by whichever card is
 		** not currently set.
 		** Returns the set card encoding.
-		**
-		** NEEDS ERROR HANDLING
 		*/
 		int setHandCard(Card c) {
+			c.checkValidCard(); // check card's validity
 			if(!hand[0].getInit()) {
 				hand[0] = c;
+				hand[0].checkValidCard(); // should be redundant
 			} else {
 				hand[1] = c;
+				hand[1].checkValidCard(); // should be redundant
 			} // end of conditional
 
 			return c.getCardEncoding();

@@ -11,12 +11,12 @@ Allows for a simple poker game to be played from a CLI.
 - [x] create card recognition logic
 - [ ] create hand recognition logic
 - [x] create exception class for invalid card designation
-- [ ] enforce unique generation of cards
+- [x] enforce unique generation of cards
 - [x] create Deck class to handle all cards
-- [ ] move card generation logic to Deck class
-  - [ ] remove all card generation logic from Card class
-  - [ ] remove all card generation logic from Hand class
-- [ ] error handling
-  - [ ] setHandCard -> hand.h
+- [x] move card generation logic to Deck class
+  - [x] remove all card generation logic from Card class
+  - [x] remove all card generation logic from Hand class
+- [x] error handling
+  - [x] setHandCard -> hand.h
 <!-- - [ ] 
 -->

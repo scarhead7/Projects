@@ -45,6 +45,7 @@ class Deck {
 				genCard.setCardValue(valueAttempt); // set value
 				(void)genCard.setCardEncoding();
 			} while(this->generatedCards[suitAttempt][valueAttempt]);
+			genCard.checkValidCard(); // validity check; should never fail
 			this->generatedCards[suitAttempt][valueAttempt] = true;
 
 			return genCard;

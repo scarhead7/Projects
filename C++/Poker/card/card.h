@@ -120,6 +120,16 @@ class Card {
 			return this->init;
 		} // end of getInit()
 
+		/* checks if this is a valid card
+		** Will return true if valid card; will throw exception if not.
+		*/
+		bool checkValidCard(void) {
+			if(this->suit >= 0 && this->suit <= 3 &&
+				this->value >= 0 && this->value <= 12)
+				return true;
+			throw InvalidCardDesignationException("INVALID CARD");
+		} // end of checkValidCard()
+
 		/* sets card value
 		** will potentially go away
 		*/
