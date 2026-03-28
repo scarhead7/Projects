@@ -1,5 +1,5 @@
 /* CREATED BY: 1E1DB14C
-** CREATED 191326 DEC 2025 UPDATED 18 MAR 2026
+** CREATED 191326 DEC 2025 UPDATED 28 MAR 2026
 ** CLI Poker: Hand class header
 */
 
@@ -39,9 +39,33 @@ class Hand {
 			return c.getCardEncoding();
 		} // end of setHandCard()
 
+		/* Returns player's hand.
+		*/
 		std::string getPlayerHand(void) {
 			return hand[0].getCardDesignation() + "\n" + hand[1].getCardDesignation();
 		} // end of getPlayerHand()
+
+		/* Returns value of first card in player's hand.
+		**
+		** Testing function--possibly.
+		*/
+		int getFirstCardValue(void) {
+			return hand[0].getCardValue() + 2; // return corrected value
+		} // end of getFirstCardValue()
+
+		/* Returns value of second card in player's hand.
+		**
+		** Testing function-possibly.
+		*/
+		int getSecondCardValue(void) {
+			return hand[1].getCardValue() + 2; // return corrected value
+		} // end of getSecondCardValue()
+
+		/* Recognizes what ranking the player has.
+		*/
+		void recognizeHand(void) {
+			//STUBBED
+		} // end of recognizeHand()
 }; // end of Hand class
 
 #endif
