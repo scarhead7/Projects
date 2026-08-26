@@ -1,6 +1,6 @@
 <?php
 /* 1E1DB14C
-** CREATED 251302 NOV 2025 UPDATED 29 NOV 2025
+** CREATED 251302 NOV 2025 UPDATED 26 AUG 2026
 ** Fullstack project.
 */
 
@@ -10,6 +10,7 @@
 ** - add user portal
 ** - add user cart
 ** - add logout confirmation page
+** - add store home page (do not default to user portal page)
 ** - 
 **************************************/
 

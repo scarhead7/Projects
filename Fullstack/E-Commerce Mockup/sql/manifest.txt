@@ -1,0 +1,3 @@
+26 AUG 2026
+
+I understand it's a very bad idea to store the structure of my database tables here, but this isn't a production site and if it were I would be doing things differently.
